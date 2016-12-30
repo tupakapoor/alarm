@@ -50,7 +50,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Alarms" id="3Jh-eQ-XSs">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vzs-Sp-hgY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vzs-Sp-hgY">
+                            <connections>
+                                <action selector="addAlarm" destination="k20-l5-ezx" id="ovP-fv-xus"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="HL9-UF-jts" kind="show" identifier="AddEdit" id="hpj-WG-C6U"/>
@@ -138,7 +142,13 @@
                             <constraint firstItem="pIE-KZ-zPG" firstAttribute="leading" secondItem="t6W-Jc-B6r" secondAttribute="trailing" constant="20" id="scO-SV-pyw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Alarm" id="cVi-o9-LEY"/>
+                    <navigationItem key="navigationItem" title="Add Alarm" id="cVi-o9-LEY">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="h2D-Fy-Kxg">
+                            <connections>
+                                <action selector="addAlarm" destination="HL9-UF-jts" id="pB2-B9-c0R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="alarmTitle" destination="pIE-KZ-zPG" id="Zqc-8S-RBh"/>
                         <outlet property="dateTime" destination="xed-Bq-wYz" id="koA-FG-ahm"/>

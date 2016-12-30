@@ -20,6 +20,8 @@ I will be using a table view to display the list of alarms. There will be an "Ad
 
 ## Improvements
 * Repeating alarms
+* Better local storage of alarms
 * Server based storage of alarms
   * iCloud for notifications across multiple devices 
   * Save to a server for alarms via push notification
+* Target iPad in addition to iPhone
