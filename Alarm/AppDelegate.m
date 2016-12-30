@@ -16,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSDictionary *defaultDefaults = @{ @"alarms": [NSMutableArray new] };
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultDefaults];
+    
     return YES;
 }
 

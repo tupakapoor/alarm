@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AKKAlarmTableViewController.h
 //  Alarm
 //
 //  Created by Ameesh Kapoor on 12/29/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface AKKAlarmTableViewController : UITableViewController
 
 @end
-

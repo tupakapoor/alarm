@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		BCBF500C1E15F7C3004136DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF500B1E15F7C3004136DE /* main.m */; };
 		BCBF500F1E15F7C3004136DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF500E1E15F7C3004136DE /* AppDelegate.m */; };
-		BCBF50121E15F7C3004136DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50111E15F7C3004136DE /* ViewController.m */; };
 		BCBF50151E15F7C3004136DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBF50131E15F7C3004136DE /* Main.storyboard */; };
 		BCBF50171E15F7C3004136DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBF50161E15F7C3004136DE /* Assets.xcassets */; };
 		BCBF501A1E15F7C3004136DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCBF50181E15F7C3004136DE /* LaunchScreen.storyboard */; };
 		BCBF50251E15F7C3004136DE /* AlarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50241E15F7C3004136DE /* AlarmTests.m */; };
+		BCBF50371E160014004136DE /* AKKAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50361E160014004136DE /* AKKAlarmTableViewController.m */; };
+		BCBF503A1E160096004136DE /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50391E160096004136DE /* Alarm.m */; };
+		BCBF503B1E160096004136DE /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50391E160096004136DE /* Alarm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +33,6 @@
 		BCBF500B1E15F7C3004136DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCBF500D1E15F7C3004136DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCBF500E1E15F7C3004136DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BCBF50101E15F7C3004136DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BCBF50111E15F7C3004136DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BCBF50141E15F7C3004136DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCBF50161E15F7C3004136DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCBF50191E15F7C3004136DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,10 @@
 		BCBF50201E15F7C3004136DE /* AlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBF50241E15F7C3004136DE /* AlarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmTests.m; sourceTree = "<group>"; };
 		BCBF50261E15F7C3004136DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCBF50351E160014004136DE /* AKKAlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAlarmTableViewController.h; sourceTree = "<group>"; };
+		BCBF50361E160014004136DE /* AKKAlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAlarmTableViewController.m; sourceTree = "<group>"; };
+		BCBF50381E160096004136DE /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		BCBF50391E160096004136DE /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +85,13 @@
 		BCBF50091E15F7C3004136DE /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				BCBF50341E160014004136DE /* ViewControllers */,
+				BCBF50321E15FFFE004136DE /* Models */,
 				BCBF500D1E15F7C3004136DE /* AppDelegate.h */,
 				BCBF500E1E15F7C3004136DE /* AppDelegate.m */,
-				BCBF50101E15F7C3004136DE /* ViewController.h */,
-				BCBF50111E15F7C3004136DE /* ViewController.m */,
 				BCBF50131E15F7C3004136DE /* Main.storyboard */,
-				BCBF50161E15F7C3004136DE /* Assets.xcassets */,
 				BCBF50181E15F7C3004136DE /* LaunchScreen.storyboard */,
+				BCBF50161E15F7C3004136DE /* Assets.xcassets */,
 				BCBF501B1E15F7C3004136DE /* Info.plist */,
 				BCBF500A1E15F7C3004136DE /* Supporting Files */,
 			);
@@ -109,6 +113,24 @@
 				BCBF50261E15F7C3004136DE /* Info.plist */,
 			);
 			path = AlarmTests;
+			sourceTree = "<group>";
+		};
+		BCBF50321E15FFFE004136DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCBF50381E160096004136DE /* Alarm.h */,
+				BCBF50391E160096004136DE /* Alarm.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCBF50341E160014004136DE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCBF50351E160014004136DE /* AKKAlarmTableViewController.h */,
+				BCBF50361E160014004136DE /* AKKAlarmTableViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCBF50121E15F7C3004136DE /* ViewController.m in Sources */,
 				BCBF500F1E15F7C3004136DE /* AppDelegate.m in Sources */,
 				BCBF500C1E15F7C3004136DE /* main.m in Sources */,
+				BCBF50371E160014004136DE /* AKKAlarmTableViewController.m in Sources */,
+				BCBF503A1E160096004136DE /* Alarm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCBF50251E15F7C3004136DE /* AlarmTests.m in Sources */,
+				BCBF503B1E160096004136DE /* Alarm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GPH2DGJ8ZR;
 				INFOPLIST_FILE = Alarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kapoor.Alarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,6 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GPH2DGJ8ZR;
 				INFOPLIST_FILE = Alarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kapoor.Alarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
