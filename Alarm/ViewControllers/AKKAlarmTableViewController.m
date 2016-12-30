@@ -23,7 +23,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.alarms = [[NSUserDefaults standardUserDefaults] objectForKey:@"alarms"];
+    NSArray *alarmDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:@"alarms"];
+    self.alarms = [NSMutableArray new];
+    for (NSDictionary *alarmDict in alarmDictionaries) {
+        Alarm *a = [Alarm fromDictionary:alarmDict];
+        [self.alarms addObject:a];
+    }
     [self.tableView reloadData];
 }
 

@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Alarm : NSObject<NSCoding>
+@interface Alarm : NSObject
 
-@property (nonatomic, readonly) NSUUID *id;
+@property (nonatomic, readonly) NSString *id;
 @property (nonatomic, readonly) NSString *alarmTitle;
 @property (nonatomic, readonly) NSDate *dateTime;
 @property (nonatomic, readonly) NSTimeZone *timeZone;
 
 - (instancetype)initWithTitle:(NSString *)title dateTime:(NSDate *)dateTime timeZone:(NSTimeZone *)timeZone;
 - (instancetype)updateWithTitle:(NSString *)title dateTime:(NSDate *)dateTime timeZone:(NSTimeZone *)timeZone;
+- (NSDictionary *)toDictionary;
++ (instancetype)fromDictionary:(NSDictionary *)dict;
 
 @end

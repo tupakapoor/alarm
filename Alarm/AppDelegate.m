@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSDictionary *defaultDefaults = @{ @"alarms": [NSMutableArray new] };
+    NSDictionary *defaultDefaults = @{ @"alarms": [NSArray new] };
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultDefaults];
     
     return YES;

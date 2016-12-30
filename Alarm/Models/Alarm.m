@@ -10,7 +10,7 @@
 
 @interface Alarm ()
 
-@property (nonatomic, strong) NSUUID *id;
+@property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *alarmTitle;
 @property (nonatomic, strong) NSDate *dateTime;
 @property (nonatomic, strong) NSTimeZone *timeZone;
@@ -22,7 +22,7 @@
 - (instancetype)initWithTitle:(NSString *)title dateTime:(NSDate *)dateTime timeZone:(NSTimeZone *)timeZone {
     self = [super init];
     if (self) {
-        self.id = [NSUUID UUID];
+        self.id = [NSUUID UUID].UUIDString;
         self.alarmTitle = title;
         self.dateTime = dateTime;
         self.timeZone = timeZone;
@@ -38,23 +38,35 @@
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.id forKey:@"id"];
-    [aCoder encodeObject:self.alarmTitle forKey:@"alarmTitle"];
-    [aCoder encodeObject:self.dateTime forKey:@"dateTime"];
-    [aCoder encodeObject:self.timeZone forKey:@"timeZone"];
+- (void)setId:(NSString *)id {
+    if (_id == nil) {
+        _id = id;
+    }
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super init];
-    if (self) {
-        _id = [aDecoder decodeObjectForKey:@"id"];
-        _alarmTitle = [aDecoder decodeObjectForKey:@"alarmTitle"];
-        _dateTime = [aDecoder decodeObjectForKey:@"dateTime"];
-        _timeZone = [aDecoder decodeObjectForKey:@"timeZone"];
-    }
-    
-    return self;
+- (NSDictionary *)toDictionary {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+    return @{ @"id": self.id,
+              @"alarmTitle": self.alarmTitle,
+              @"dateTime": [df stringFromDate:self.dateTime],
+              @"timeZone": self.timeZone.name
+              };
+}
+
++ (instancetype)fromDictionary:(NSDictionary *)dict {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+    NSString *id = dict[@"id"];
+    NSString *title = dict[@"alarmTitle"];
+    NSDate *dateTime = [df dateFromString:dict[@"dateTime"]];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:dict[@"timeZone"]];
+    Alarm *a = [[Alarm alloc] initWithTitle:title
+                                   dateTime:dateTime
+                                   timeZone:timeZone];
+    [a setId:id];
+        
+    return a;
 }
 
 @end

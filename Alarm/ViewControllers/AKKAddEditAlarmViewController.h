@@ -6,8 +6,11 @@
 //  Copyright © 2016 Kapoor. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Alarm.h"
 
-@interface AKKAddEditAlarmViewController : NSObject
+@interface AKKAddEditAlarmViewController : UIViewController
+
+@property (nonatomic, strong) Alarm *theAlarm;
 
 @end
