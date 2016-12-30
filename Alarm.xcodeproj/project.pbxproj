@@ -18,6 +18,8 @@
 		BCBF503B1E160096004136DE /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50391E160096004136DE /* Alarm.m */; };
 		BCBF50421E16091E004136DE /* AKKAddEditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50411E16091E004136DE /* AKKAddEditAlarmViewController.m */; };
 		BCBF50431E16091E004136DE /* AKKAddEditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50411E16091E004136DE /* AKKAddEditAlarmViewController.m */; };
+		BCBF50461E162F03004136DE /* AlarmListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50451E162F03004136DE /* AlarmListManager.m */; };
+		BCBF50471E162F03004136DE /* AlarmListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50451E162F03004136DE /* AlarmListManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		BCBF50391E160096004136DE /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		BCBF50401E16091E004136DE /* AKKAddEditAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAddEditAlarmViewController.h; sourceTree = "<group>"; };
 		BCBF50411E16091E004136DE /* AKKAddEditAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAddEditAlarmViewController.m; sourceTree = "<group>"; };
+		BCBF50441E162F03004136DE /* AlarmListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmListManager.h; sourceTree = "<group>"; };
+		BCBF50451E162F03004136DE /* AlarmListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmListManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 			children = (
 				BCBF50381E160096004136DE /* Alarm.h */,
 				BCBF50391E160096004136DE /* Alarm.m */,
+				BCBF50441E162F03004136DE /* AlarmListManager.h */,
+				BCBF50451E162F03004136DE /* AlarmListManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 				BCBF500C1E15F7C3004136DE /* main.m in Sources */,
 				BCBF50371E160014004136DE /* AKKAlarmTableViewController.m in Sources */,
 				BCBF503A1E160096004136DE /* Alarm.m in Sources */,
+				BCBF50461E162F03004136DE /* AlarmListManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCBF50251E15F7C3004136DE /* AlarmTests.m in Sources */,
+				BCBF50471E162F03004136DE /* AlarmListManager.m in Sources */,
 				BCBF50431E16091E004136DE /* AKKAddEditAlarmViewController.m in Sources */,
 				BCBF503B1E160096004136DE /* Alarm.m in Sources */,
 			);
