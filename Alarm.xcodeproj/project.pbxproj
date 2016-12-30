@@ -16,6 +16,8 @@
 		BCBF50371E160014004136DE /* AKKAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50361E160014004136DE /* AKKAlarmTableViewController.m */; };
 		BCBF503A1E160096004136DE /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50391E160096004136DE /* Alarm.m */; };
 		BCBF503B1E160096004136DE /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50391E160096004136DE /* Alarm.m */; };
+		BCBF50421E16091E004136DE /* AKKAddEditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50411E16091E004136DE /* AKKAddEditAlarmViewController.m */; };
+		BCBF50431E16091E004136DE /* AKKAddEditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBF50411E16091E004136DE /* AKKAddEditAlarmViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		BCBF50361E160014004136DE /* AKKAlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAlarmTableViewController.m; sourceTree = "<group>"; };
 		BCBF50381E160096004136DE /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		BCBF50391E160096004136DE /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		BCBF50401E16091E004136DE /* AKKAddEditAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAddEditAlarmViewController.h; sourceTree = "<group>"; };
+		BCBF50411E16091E004136DE /* AKKAddEditAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAddEditAlarmViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 			children = (
 				BCBF50351E160014004136DE /* AKKAlarmTableViewController.h */,
 				BCBF50361E160014004136DE /* AKKAlarmTableViewController.m */,
+				BCBF50401E16091E004136DE /* AKKAddEditAlarmViewController.h */,
+				BCBF50411E16091E004136DE /* AKKAddEditAlarmViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBF50421E16091E004136DE /* AKKAddEditAlarmViewController.m in Sources */,
 				BCBF500F1E15F7C3004136DE /* AppDelegate.m in Sources */,
 				BCBF500C1E15F7C3004136DE /* main.m in Sources */,
 				BCBF50371E160014004136DE /* AKKAlarmTableViewController.m in Sources */,
@@ -249,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCBF50251E15F7C3004136DE /* AlarmTests.m in Sources */,
+				BCBF50431E16091E004136DE /* AKKAddEditAlarmViewController.m in Sources */,
 				BCBF503B1E160096004136DE /* Alarm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
