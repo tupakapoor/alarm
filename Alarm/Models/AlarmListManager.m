@@ -32,19 +32,21 @@ static AlarmListManager *manager;
 
 + (NSArray<Alarm*> *)load {
     NSArray *alarmDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:@"alarms"];
-    manager.alarms = [NSMutableArray new];
+    [[AlarmListManager manager].alarms removeAllObjects];
     for (NSDictionary *alarmDict in alarmDictionaries) {
         Alarm *a = [Alarm fromDictionary:alarmDict];
-        [manager.alarms addObject:a];
+        if ([a.dateTime compare:[NSDate date]] == NSOrderedDescending) {
+            [[AlarmListManager manager].alarms addObject:a];
+        }
     }
     
-    return manager.alarms;
+    return [AlarmListManager manager].alarms;
 }
 
 + (void)save {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *serializedAlarms = [NSMutableArray new];
-    for (Alarm *a in manager.alarms) {
+    for (Alarm *a in [AlarmListManager manager].alarms) {
         [serializedAlarms addObject:[a toDictionary]];
     }
     
@@ -53,12 +55,18 @@ static AlarmListManager *manager;
 }
 
 + (void)addAlarm:(Alarm *)alarm {
-    [manager.alarms addObject:alarm];
+    [[AlarmListManager manager].alarms addObject:alarm];
     [AlarmListManager save];
 }
 
 + (void)removeAlarm:(Alarm *)alarm {
-    [manager.alarms removeObject:alarm];
+    for (Alarm *a in [AlarmListManager manager].alarms) {
+        if ([alarm.id isEqualToString:a.id]) {
+            [[AlarmListManager manager].alarms removeObject:a];
+            break;
+        }
+    }
+    
     [AlarmListManager save];
 }
 

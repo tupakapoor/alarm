@@ -17,6 +17,8 @@
 
 - (instancetype)initWithTitle:(NSString *)title dateTime:(NSDate *)dateTime timeZone:(NSTimeZone *)timeZone;
 - (instancetype)updateWithTitle:(NSString *)title dateTime:(NSDate *)dateTime timeZone:(NSTimeZone *)timeZone;
+- (void)scheduleWithHandler:(void(^)(NSError *error))completionHandler;
+- (void)unschedule;
 - (NSDictionary *)toDictionary;
 + (instancetype)fromDictionary:(NSDictionary *)dict;
 

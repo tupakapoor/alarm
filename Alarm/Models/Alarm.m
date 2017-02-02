@@ -7,6 +7,7 @@
 //
 
 #import "Alarm.h"
+@import UserNotifications;
 
 @interface Alarm ()
 
@@ -42,6 +43,32 @@
     if (_id == nil) {
         _id = id;
     }
+}
+
+- (void)scheduleWithHandler:(nullable void(^)(NSError *__nullable error))completionHandler {
+    UNMutableNotificationContent *notif = [[UNMutableNotificationContent alloc] init];
+//    notif.title = [NSString localizedUserNotificationStringForKey:@"Alarm" arguments:nil];
+    notif.title = [NSString localizedUserNotificationStringForKey:self.alarmTitle arguments:nil];
+    notif.sound = [UNNotificationSound defaultSound];
+    NSTimeInterval interval = [self.dateTime timeIntervalSinceDate:[NSDate date]];
+    UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:interval
+                                                                                                    repeats:NO];
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:self.id
+                                                                          content:notif
+                                                                          trigger:trigger];
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    UNNotificationCategory *inviteCategory = [UNNotificationCategory categoryWithIdentifier:@"alarms"
+                                                                                    actions:@[]
+                                                                          intentIdentifiers:@[]
+                                                                                    options:UNNotificationCategoryOptionCustomDismissAction];
+    
+    NSSet *categories = [NSSet setWithObject:inviteCategory];
+    [center setNotificationCategories:categories];
+    [center addNotificationRequest:request withCompletionHandler:completionHandler];
+}
+
+- (void)unschedule {
+    [[UNUserNotificationCenter currentNotificationCenter] removePendingNotificationRequestsWithIdentifiers:@[self.id]];
 }
 
 - (NSDictionary *)toDictionary {

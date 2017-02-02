@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Alarm.h"
 
-@interface AKKAddEditAlarmViewController : UIViewController
+@interface AKKAddEditAlarmViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) Alarm *theAlarm;
 
